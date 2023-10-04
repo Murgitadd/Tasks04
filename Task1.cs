@@ -1,10 +1,26 @@
-Console.WriteLine("Enter a four-digit number:");
+using System;
 
-int num = int.Parse(Console.ReadLine());
+class Program
+{
+    static void Main()
+    {
+        int[] nums = { 5, 2, 9, 1, 5, 6 };
+        int minValue = Min(nums);
+        Console.WriteLine("Min: " + minValue);
+    }
 
-int minlik = num / 1000;
-int yuzluk = (num % 1000) / 100;
-int onluq = (num % 100) / 10;
-int teklik = (num % 10);
+    static int Min(int[] arr)
+    {
+        int minValue = arr[0];
 
-Console.WriteLine(minlik+yuzluk+onluq+teklik);
+        for (int i = 1; i < arr.Length; i++)
+        {
+            if (arr[i] < minValue)
+            {
+                minValue = arr[i];
+            }
+        }
+
+        return minValue;
+    }
+}
